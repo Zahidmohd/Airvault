@@ -1,0 +1,83 @@
+---
+import { Image } from 'astro:assets';
+import Button from './Button.astro';
+
+// Import all images
+import img1 from '../../public/assets/grid1.jpg';
+import img2 from '../../public/assets/grid2.jpg';
+import img3 from '../../public/assets/grid3.jpg';
+import img4 from '../../public/assets/grid4.jpg';
+import img5 from '../../public/assets/grid5.jpg';
+import img6 from '../../public/assets/grid6.jpg';
+import img7 from '../../public/assets/grid7.jpg';
+import img8 from '../../public/assets/grid8.jpg';
+import img9 from '../../public/assets/grid9.jpg';
+import img10 from '../../public/assets/grid10.jpg';
+import img11 from '../../public/assets/grid11.jpg';
+import img12 from '../../public/assets/grid12.jpg';
+
+const images = [
+  { src: img1, alt: "Newborn moment" },
+  { src: img2, alt: "First birthday celebration" },
+  { src: img3, alt: "Graduation day" },
+  { src: img4, alt: "Temple visit" },
+  { src: img5, alt: "Engagement moment" },
+  { src: img6, alt: "Child playing" },
+  { src: img7, alt: "First day of school" },
+  { src: img8, alt: "Motorcycle ride" },
+  { src: img9, alt: "50th anniversary celebration" },
+  { src: img10, alt: "Worker with safety gear" },
+  { src: img11, alt: "Boat travel" },
+  { src: img12, alt: "Grandfather and grandson" },
+];
+---
+
+<section class="py-24 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-[#333333] text-5xl md:text-6xl font-medium mb-6">
+        We know the faces you love
+      </h2>
+      <p class="text-[#666666] text-xl mb-8">
+        AirVault uses AI to find your loved ones, across all your memories. Letting you live those happy moments that truly happen only once.
+      </p>
+      <Button text="Try AirVault Now" href="#" />
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+      {images.slice(0, 4).map((img) => (
+        <div class="aspect-square rounded-2xl overflow-hidden">
+          <Image
+            src={img.src || "/placeholder.svg"}
+            alt={img.alt}
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+      ))}
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-6xl mx-auto mt-4">
+      {images.slice(4, 8).map((img) => (
+        <div class="aspect-square rounded-2xl overflow-hidden">
+          <Image
+            src={img.src || "/placeholder.svg"}
+            alt={img.alt}
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+      ))}
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-6xl mx-auto mt-4">
+      {images.slice(8, 12).map((img) => (
+        <div class="aspect-square rounded-2xl overflow-hidden">
+          <Image
+            src={img.src || "/placeholder.svg"}
+            alt={img.alt}
+            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
