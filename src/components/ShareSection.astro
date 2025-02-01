@@ -1,0 +1,84 @@
+---
+import { Image } from 'astro:assets';
+import Button from './Button.astro';
+
+// Import images
+import mountainImg from '../../public/assets/mountain.png';
+import bachelorImg from '../../public/assets/bachelor.png';
+import newyearImg from '../../public/assets/newyear.png';
+import paradiseThumb from '../../public/assets/paradise.jpg';
+import airdropIcon from '../../public/assets/airdrop.png';
+import messageIcon from '../../public/assets/message.png';
+import mailIcon from '../../public/assets/mail.png';
+import bluetoothIcon from '../../public/assets/bluetooth.png';
+---
+
+<section class="bg-white min-h-screen py-24">
+  <div class="container mx-auto px-4 text-center">
+    <div class="max-w-4xl mx-auto mb-24">
+      <h2 class="text-[#333333] text-5xl md:text-6xl font-medium mb-4">
+        The best moments are the ones you share.
+      </h2>
+      <h3 class="text-[#333333]/80 text-xl font-medium mb-6">
+        Share your memories with your friends and family with a single click.
+      </h3>
+      <Button text="Try AirVault Now" href="#" class="bg-[#FF6A00] text-white px-6 py-3 rounded-full text-lg shadow-md hover:bg-orange-600 transition" />
+    </div>
+
+    <div class="relative max-w-6xl mx-auto h-[600px] flex justify-center">
+      <!-- Left Image - Mountain -->
+      <div class="absolute left-[22%] top-[100px] w-[200px] h-[250px] rounded-[16px] overflow-hidden">
+        <Image src={mountainImg} alt="Mountain view" width={200} height={250} class="object-cover w-full h-full" />
+      </div>
+
+      <!-- Bottom Left Image - Bachelor Party -->
+      <div class="absolute left-[30%] top-[270px] w-[180px] h-[220px] rounded-[16px] overflow-hidden z-10">
+        <Image src={bachelorImg} alt="Bachelor Party" width={180} height={220} class="object-cover w-full h-full" />
+      </div>
+
+      <!-- Center Image - New Year's Eve -->
+      <div class="absolute left-[40%] top-[0px] w-[350px] h-[400px] rounded-[16px] overflow-hidden z-0">
+        <Image src={newyearImg} alt="New Year's Eve" width={350} height={400} class="object-cover w-full h-full" />
+      </div>
+
+      <!-- Right Image - Sharing Card -->
+      <div class="absolute left-[65%] top-[80px] w-[320px] h-[280px] rounded-[20px] shadow-xl bg-white p-4">
+        <div class="flex items-center gap-3 bg-gray-100 p-3 rounded-[14px]">
+          <Image src={paradiseThumb} alt="Paradise" width={45} height={45} class="rounded-lg" />
+          <div>
+            <h4 class="text-gray-900 font-bold text-[16px]">Paradise in the sand</h4>
+            <div class="flex items-center gap-2 text-gray-600 text-xs">
+              <span>Dec 25, 2024</span>
+              <span class="w-1 h-1 bg-gray-600 rounded-full"></span>
+              <span>54 items</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex justify-center gap-4 mt-4">
+          <button class="bg-blue-600 text-white px-4 py-2 rounded-full text-xs shadow-md">
+            Get link
+          </button>
+          <button class="text-blue-600 font-semibold text-xs">Options ›</button>
+        </div>
+
+        <!-- Icons Grid -->
+        <div class="grid grid-cols-4 gap-4 mt-6 justify-center">
+          {[{ icon: airdropIcon, label: 'AirDrop' },
+            { icon: messageIcon, label: 'Messages' },
+            { icon: mailIcon, label: 'Mail' },
+            { icon: bluetoothIcon, label: 'Bluetooth' }
+          ].map((item, index) => (
+            <div class="flex flex-col items-center gap-1">
+              <div class="w-[50px] h-[50px] bg-white rounded-[12px] flex items-center justify-center shadow-md">
+                <Image src={item.icon} alt={item.label} width={30} height={30} />
+              </div>
+              <span class="text-xs text-gray-600 font-medium">{item.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
