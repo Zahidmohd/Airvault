@@ -1,93 +1,96 @@
 ---
 import { Image } from 'astro:assets';
-import cloudImg from '../../public/assets/cloud-app.png';
+import CloudImg from '../../public/assets/cloud-app.png';
 import goImg from '../../public/assets/go-device.png';
 import proImg from '../../public/assets/pro-device.png';
 ---
 
-<section class="bg-white py-24 m-12">
-  <div class="container mx-auto px-4">
-    <h2 class="text-[#31323D] text-3xl md:text-4xl font-medium text-center max-w-4xl mx-auto mb-16">
+<section class="bg-white py-24 lg:m-12 m-0">
+  <div class="container mx-auto lg:px-4 px-6">
+    <h2 class="text-[#31323D] text-2xl md:text-3xl lg:text-4xl font-medium text-center max-w-4xl mx-auto mb-16 px-4">
       Explore our wide selection of products that helps you preserve your memories, in your own style.
     </h2>
 
     <div class="grid lg:grid-cols-2 gap-6">
       {/* AirVault Cloud Card */}
-      <div class="bg-white rounded-[2.5rem] p-12 shadow-[0_0_50px_0_rgba(0,0,0,0.1)] relative overflow-hidden h-[640px]">
-        <div class="max-w-[60%]">
-          <h3 class="text-[2.5rem] leading-tight mb-6">
+      <div class="bg-white rounded-[2.5rem] p-8 lg:p-12 shadow-[0_0_50px_0_rgba(0,0,0,0.1)] relative overflow-hidden h-[700px] lg:h-[640px]">
+        <div class="lg:max-w-[60%] w-full">
+          <h3 class="text-[2rem] lg:text-[2.5rem] leading-tight mb-6">
             <span class="bg-gradient-to-r from-[#4873FF] via-[#593CFF] to-[#FF3CCB] bg-clip-text text-transparent font-semibold">AirVault Cloud</span>
             <span class="text-[#58585C]">is built for people who like it to keep it</span> 
             <span class="text-[#31323D] font-semibold">simple.</span>
           </h3>
-          <p class="text-[#666666] text-xl mb-8">
+          <p class="text-[#64667A] text-lg lg:text-xl mb-8">
             AirVault Cloud lets you pack light on your trips so you can 
-            <span class="font-medium text-[#333333]">explore the world with just your phone.</span>
+            <span class="font-medium text-[#31323D]">explore the world with just your phone.</span>
           </p>
-          <button class="border-2 border-[#333333] text-[#31323D] font-semibold px-8 py-4 rounded-full hover:bg-[#333333] hover:text-white transition-colors">
+          <button class="border-2 border-[#31323D] text-[#31323D] font-semibold px-6 lg:px-8 py-3 lg:py-4 rounded-full hover:bg-[#31323D] hover:text-white transition-colors">
             Try AirVault Now
           </button>
         </div>
-        <div class="absolute right-0 bottom-0">
+        <div class="mt-12 lg:mt-0 lg:absolute lg:right-0 lg:bottom-0 flex justify-center lg:justify-end">
           <Image 
-            src={cloudImg || "/placeholder.svg"}
+            src={CloudImg || "/placeholder.svg"}
             alt="AirVault Cloud App Interface"
             width={234}
             height={480}
+            class="w-[180px] lg:w-[234px]"
           />
         </div>
       </div>
 
       {/* AirVault Go Card */}
-      <div class="bg-white rounded-[2.5rem] p-12 shadow-[0_0_50px_0_rgba(0,0,0,0.1)] relative overflow-hidden h-[640px]">
-        <div class="max-w-[60%]">
-          <h3 class="text-[2.5rem] leading-tight mb-6">
+      <div class="bg-white rounded-[2.5rem] p-8 lg:p-12 shadow-[0_0_50px_0_rgba(0,0,0,0.1)] relative overflow-hidden h-[700px] lg:h-[640px]">
+        <div class="lg:max-w-[60%] w-full">
+          <h3 class="text-[2rem] lg:text-[2.5rem] leading-tight mb-6">
             <span class="bg-gradient-to-r from-[#4873FF] via-[#593CFF] to-[#FF3CCB] bg-clip-text text-transparent font-semibold">AirVault Go</span>
             <span class="text-[#58585C]">is built for people who like to keep it</span> 
             <span class="text-[#31323D] font-semibold">close.</span>
           </h3>
-          <p class="text-[#666666] text-xl mb-8">
+          <p class="text-[#64667A] text-lg lg:text-xl mb-8">
             AirVault Go lets you 
-            <span class="font-medium text-[#333333]">keep all your memories in your pocket</span>, 
+            <span class="font-medium text-[#31323D]">keep all your memories in your pocket</span>, 
             so you can take them with you even on the craziest of adventures.
           </p>
-          <button class="border-2 border-[#333333] text-[#31323D] font-semibold px-8 py-4 rounded-full hover:bg-[#333333] hover:text-white transition-colors">
+          <button class="border-2 border-[#31323D] text-[#31323D] font-semibold px-6 lg:px-8 py-3 lg:py-4 rounded-full hover:bg-[#31323D] hover:text-white transition-colors">
             Try AirVault Now
           </button>
         </div>
-        <div class="absolute right-0 bottom-12">
+        <div class=" -right-10 md:right-0 bottom-12 lg:mt-12 absolute flex lg:justify-end">
           <Image 
             src={goImg || "/placeholder.svg"}
             alt="AirVault Go Device"
             width={313}
             height={358}
+            class="w-[240px] lg:w-[313px]"
           />
         </div>
       </div>
     </div>
 
     {/* AirVault Pro Card */}
-    <div class="bg-white rounded-[2.5rem] p-12 shadow-[0_0_50px_0_rgba(0,0,0,0.1)] mt-6 relative overflow-hidden h-[640px]">
-      <div class="max-w-[50%]">
-        <h3 class="text-[2.5rem] leading-tight mb-6">
-          <span class="bg-gradient-to-r from-[#FF9900] via-[#F56F2C] via-[#F54545] to-[#B41FFF] bg-clip-text text-transparent font-semibold">AirVault Pro</span>
+    <div class="bg-white rounded-[2.5rem] p-8 lg:p-12 shadow-[0_0_50px_0_rgba(0,0,0,0.1)] mt-6 relative overflow-hidden h-[907px] lg:h-[640px]">
+      <div class="lg:max-w-[50%] w-full">
+        <h3 class="text-[2rem] lg:text-[2.5rem] leading-tight mb-6">
+          <span class="bg-gradient-to-r from-[#FF9900] via-[#F54545] to-[#B41FFF] bg-clip-text text-transparent font-semibold">AirVault Pro</span>
           <span class="text-[#58585C]">is built for people who are hungry for</span> 
           <span class="text-[#31323D] font-semibold">power.</span>
         </h3>
-        <p class="text-[#666666] text-xl mb-8">
+        <p class="text-[#64667A] text-lg lg:text-xl mb-8">
           AirVault Pro brings together the power of distributed hosting into a single compact package, allowing your team to 
-          <span class="font-medium text-[#333333]">simultaneously access all your files at blazing fast speed!</span>
+          <span class="font-medium text-[#31323D]">simultaneously access all your files at blazing fast speed!</span>
         </p>
-        <button class="border-2 border-[#333333] text-[#31323D] font-semibold px-8 py-4 rounded-full hover:bg-[#333333] hover:text-white transition-colors">
+        <button class="border-2 border-[#31323D] text-[#31323D] font-semibold px-6 lg:px-8 py-3 lg:py-4 rounded-full hover:bg-[#31323D] hover:text-white transition-colors">
           Try AirVault Now
         </button>
       </div>
-      <div class="absolute right-0 bottom-0">
+      <div class="mt-12 lg:mt-0 absolute right-0 bottom-20 flex md:bottom-0  lg:justify-end">
         <Image 
           src={proImg || "/placeholder.svg"}
           alt="AirVault Pro Device"
-          width={717.1}
-          height={551.59}
+          width={717}
+          height={551}
+          class="w-[300px] lg:w-[717px]"
         />
       </div>
     </div>
