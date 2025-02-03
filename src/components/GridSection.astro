@@ -44,9 +44,9 @@ const images = [
       <Button text="Try AirVault Now" href="#" />
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-4 max-w-full mx-auto">
-      {images.slice(0, 5).map((img, index) => (
-        <div class={`aspect-square rounded-2xl overflow-hidden ${index === 0 ? 'ml-0' : ''} ${index === 3 ? 'mr-0' : ''}`}>
+    <div class="grid grid-cols-5 gap-4 max-w-full mx-auto">
+      {images.slice(0, 5).map((img) => (
+        <div class="w-[293.2px] h-[242] rounded-2xl overflow-hidden">
           <Image
             src={img.src || "/placeholder.svg"}
             alt={img.alt}
@@ -56,23 +56,21 @@ const images = [
       ))}
     </div>
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-full mx-auto mt-4">
-      {images.slice(5, 9).map((img, index) => (
-        <div class={`aspect-square rounded-2xl overflow-hidden ${index === 0 ? 'ml-0' : ''} ${index === 3 ? 'mr-0' : ''}`}>
+    <div class="grid grid-cols-4 gap-4 max-w-full mx-auto mt-4">
+      {images.slice(5, 9).map((img) => (
+        <div class="w-[368px] h-[242] rounded-2xl overflow-hidden">
           <Image
             src={img.src || "/placeholder.svg"}
             alt={img.alt}
-            width={416}
-            height={242}
             class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
           />
         </div>
       ))}
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-full mx-auto mt-4">
-      {images.slice(9, 12).map((img, index) => (
-        <div class={`aspect-square rounded-2xl overflow-hidden ${index === 0 ? 'ml-0' : ''} ${index === 3 ? 'mr-0' : ''}`}>
+    <div class="grid grid-cols-3 gap-4 max-w-full mx-auto mt-4">
+      {images.slice(9, 12).map((img) => (
+        <div class="w-[496px] h-[242px] rounded-2xl overflow-hidden">
           <Image
             src={img.src || "/placeholder.svg"}
             alt={img.alt}
