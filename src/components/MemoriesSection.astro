@@ -1,0 +1,78 @@
+---
+import { Image } from 'astro:assets';
+
+// Import images
+import img1 from '../../public/assets/baby-crawl.png';
+import img2 from '../../public/assets/baking.png';
+import img3 from '../../public/assets/mountain-view.png';
+import img4 from '../../public/assets/friends-party.png';
+import img5 from '../../public/assets/couple-moment.png';
+---
+
+<section class="bg-white py-24 overflow-hidden">
+  <div class="container mx-auto px-4">
+    <div class="text-center max-w-3xl mx-auto mb-20">
+      <h2 class="text-[#333333] text-5xl md:text-6xl font-medium mb-6">
+        Your memories are worth everything!
+      </h2>
+      <p class="text-[#666666] text-xl">
+        No one understands it better than us.
+      </p>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto">
+      <div class="flex justify-center items-center gap-4">
+        {/* Images with staggered animation and hover effects */}
+        <div class="transform -rotate-12 hover:rotate-0 transition-transform duration-300">
+          <Image
+            src={img1 || "/placeholder.svg"}
+            alt="Baby crawling"
+            width={300}
+            height={400}
+            class="rounded-[2rem] shadow-xl"
+          />
+        </div>
+
+        <div class="transform rotate-6 hover:rotate-0 transition-transform duration-300 translate-y-12">
+          <Image
+            src={img2 || "/placeholder.svg"}
+            alt="Friends baking together"
+            width={300}
+            height={400}
+            class="rounded-[2rem] shadow-xl"
+          />
+        </div>
+
+        <div class="transform -rotate-6 hover:rotate-0 transition-transform duration-300 -translate-y-12">
+          <Image
+            src={img3 || "/placeholder.svg"}
+            alt="Person on mountain top"
+            width={300}
+            height={400}
+            class="rounded-[2rem] shadow-xl"
+          />
+        </div>
+
+        <div class="transform rotate-12 hover:rotate-0 transition-transform duration-300 translate-y-8">
+          <Image
+            src={img4 || "/placeholder.svg"}
+            alt="Friends enjoying party"
+            width={300}
+            height={400}
+            class="rounded-[2rem] shadow-xl"
+          />
+        </div>
+
+        <div class="transform -rotate-3 hover:rotate-0 transition-transform duration-300 -translate-y-4">
+          <Image
+            src={img5 || "/placeholder.svg"}
+            alt="Couple moment"
+            width={300}
+            height={400}
+            class="rounded-[2rem] shadow-xl"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
