@@ -3,16 +3,18 @@ import Header from './Header.astro';
 import Button from './Button.astro';
 ---
 
-<section class="bg-white min-h-screen">
+<section class="bg-white min-h-screen flex flex-col">
   <Header />
-  <main class="container mx-auto px-4 text-center mt-24">
-    <h1 class="text-[#333333] text-5xl md:text-6xl font-medium max-w-4xl mx-auto leading-tight">
+  <main class="flex-1 flex items-center justify-center text-center px-4">
+    <div>
+    <h1 class="bg-gradient-to-r from-[#5C5C2C] via-[#3D3D3D] to-[#5C5C5C] bg-clip-text text-transparent text-5xl md:text-6xl font-bold max-w-4xl mx-auto leading-tight">
       Your photo gallery is a mess!<br/>
       We can fix it.
     </h1>
-    <p class="text-[#333333] text-xl mt-6 mb-10">
+    <p class="text-[#3D3D3D] text-xl mt-6 mb-10">
       AirVault is the easiest way to capture and relive your memories.
     </p>
     <Button text="Try AirVault Now" href="#" />
+    </div>
   </main>
 </section>
