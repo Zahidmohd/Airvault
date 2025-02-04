@@ -7,40 +7,69 @@ import Mock12 from '../../public/assets/mock12.png';
 
 <section class="bg-white min-h-screen relative overflow-hidden py-24">
   <div class="container mx-auto px-4 text-center">
-    <div class="max-w-4xl mx-auto mb-32">
-      <h2 class="text-[#31323D] text-4xl md:text-5xl mb-4">
+    <div class="max-w-4xl mx-auto mb-20 md:mb-32">
+      <h2 class="text-[#31323D] text-2xl font-medium md:text-4xl mb-4">
         AirVault doesn't just store your media.
       </h2>
-      <h3 class="text-[#31323D] text-5xl md:text-6xl font-bold mb-6">
+      <h3 class="text-[#31323D] text-4xl md:text-6xl font-bold mb-6">
         We track your memories.
       </h3>
-      <p class="text-[#31323D] text-xl md:text-2xl mb-10">
+      <p class="text-[#3D3D3D] text-xl font-medium md:text-2xl mb-10">
         Your entire life-story right at your fingertips.
       </p>
       <Button text="Try AirVault Now" href="#" />
     </div>
 
-    <div class="relative max-w-6xl mx-auto h-[1000px] flex justify-center">
-      {/* Left phone (X: 0, Y: 76.91) */}
-      <div class="absolute left-[20%] top-[77px] md:top-[77px] scale-[0.9] md:scale-100 z-0">
-        <Image
-          src={Mock12 || "/placeholder.svg"}
-          alt="AirVault App Interface - Timeline View"
-          width={400}
-          height={900}
-          class="w-auto h-auto max-w-[300px] md:max-w-[400px] object-contain"
-        />
+    <!-- Images Section -->
+    <div class="relative w-full flex justify-center">
+      <!-- Desktop Layout -->
+      <div class="relative hidden md:flex max-w-6xl mx-auto h-[1000px]">
+        <!-- Left phone (Timeline View) - Adjusted Position -->
+        <div class="absolute left-[35%] translate-x-[-100%] top-[77px] z-0">
+          <Image
+            src={Mock12 || "/placeholder.svg"}
+            alt="AirVault App Interface - Timeline View"
+            width={400}
+            height={900}
+            class="w-auto h-auto max-w-[300px] md:max-w-[400px] object-contain"
+          />
+        </div>
+
+        <!-- Right phone (Gallery View) - Centered Properly -->
+        <div class="absolute left-[50%] translate-x-[-10%] top-[-30px] z-10">
+          <Image
+            src={Mock11 || "/placeholder.svg"}
+            alt="AirVault App Interface - Gallery View"
+            width={500}
+            height={1000}
+            class="w-auto h-auto max-w-[350px] md:max-w-[500px] object-contain"
+          />
+        </div>
       </div>
-      
-      {/* Right phone (X: 374.57, Y: 0) */}
-      <div class="absolute left-[45%] top-[-20px] md:top-[-30px] z-10">
-        <Image
-          src={Mock11 || "/placeholder.svg"}
-          alt="AirVault App Interface - Gallery View"
-          width={500}
-          height={1000}
-          class="w-auto h-auto max-w-[350px] md:max-w-[500px] object-contain"
-        />
+
+      <!-- Mobile Layout -->
+      <div class="relative flex md:hidden w-[343px] h-[432px] mx-auto">
+        <!-- Left phone (Mobile) -->
+        <div class="absolute w-[186.48px] h-[391.26px] left-0 top-[40px] z-0">
+          <Image
+            src={Mock12 || "/placeholder.svg"}
+            alt="AirVault App Interface - Timeline View"
+            width={186.48}
+            height={391.26}
+            class="w-full h-full object-contain"
+          />
+        </div>
+
+        <!-- Right phone (Mobile) -->
+        <div class="absolute w-[210.1px] h-[437.03px] left-[133px] top-0 z-10">
+          <Image
+            src={Mock11 || "/placeholder.svg"}
+            alt="AirVault App Interface - Gallery View"
+            width={210.1}
+            height={437.03}
+            class="w-full h-full object-contain"
+          />
+        </div>
       </div>
     </div>
   </div>

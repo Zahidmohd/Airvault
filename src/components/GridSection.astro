@@ -16,7 +16,7 @@ import img10 from '../../public/assets/grid10.jpg';
 import img11 from '../../public/assets/grid11.jpg';
 import img12 from '../../public/assets/grid12.jpg';
 
-const images = [
+const desktopImages = [
   { src: img1, alt: "Newborn moment" },
   { src: img2, alt: "First birthday celebration" },
   { src: img3, alt: "Graduation day" },
@@ -30,47 +30,95 @@ const images = [
   { src: img11, alt: "Boat travel" },
   { src: img12, alt: "Grandfather and grandson" },
 ];
+
+const mobileImages = [
+  { src: img1, alt: "Newborn moment", width: 183.5, height: 116 },
+  { src: img6, alt: "Child playing", width: 183.5, height: 116 }, // Swapped with img3
+  { src: img3, alt: "Graduation day", width: 183.5, height: 240 }, // Swapped with img5
+  { src: img7, alt: "First day of school", width: 183.5, height: 240 }, // Swapped with img6
+  { src: img5, alt: "Engagement moment", width: 183.5, height: 240 }, // Swapped with img7
+  { src: img8, alt: "Motorcycle ride", width: 183.5, height: 240 },
+  { src: img10, alt: "Worker with safety gear", width: 183.5, height: 116 },
+  { src: img11, alt: "Boat travel", width: 183.5, height: 116 },
+];
 ---
 
 <section class="py-24 bg-white overflow-hidden">
   <div class="mx-0">
     <div class="text-center max-w-4xl mx-auto mb-16">
-      <h2 class="bg-gradient-to-r from-[#5C5C2C] via-[#3D3D3D] to-[#5C5C5C] bg-clip-text text-transparent text-5xl md:text-6xl font-bold mb-6">
+      <h2 class="bg-gradient-to-r from-[#5C5C2C] via-[#3D3D3D] to-[#5C5C5C] bg-clip-text text-transparent text-4xl md:text-6xl font-bold mb-6">
         We know the faces you love
       </h2>
-      <p class="text-[#3D3D3D] text-xl mb-8">
+      <p class="text-[#3D3D3D] text-xl font-medium md:text-2xl mb-8">
         AirVault uses AI to find your loved ones, across all your memories. Letting you live those happy moments that truly happen only once.
       </p>
       <Button text="Try AirVault Now" href="#" />
     </div>
 
-    <div class="grid grid-cols-5 gap-4 max-w-full mx-auto">
-      {images.slice(0, 5).map((img) => (
-        <div class="w-[293.2px] h-[242] rounded-2xl overflow-hidden">
-          <Image
-            src={img.src || "/placeholder.svg"}
-            alt={img.alt}
-            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-          />
-        </div>
-      ))}
+    <!-- Desktop Grid -->
+    <div class="hidden md:block">
+      <div class="grid grid-cols-5 gap-4 max-w-full mx-auto">
+        {desktopImages.slice(0, 5).map((img) => (
+          <div class="w-[293.2px] h-[242px] rounded-2xl overflow-hidden">
+            <Image
+              src={img.src || "/placeholder.svg"}
+              alt={img.alt}
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        ))}
+      </div>
+
+      <div class="grid grid-cols-4 gap-4 max-w-full mx-auto mt-4">
+        {desktopImages.slice(5, 9).map((img) => (
+          <div class="w-[368px] h-[242px] rounded-2xl overflow-hidden">
+            <Image
+              src={img.src || "/placeholder.svg"}
+              alt={img.alt}
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        ))}
+      </div>
+
+      <div class="grid grid-cols-3 gap-4 max-w-full mx-auto mt-4">
+        {desktopImages.slice(9, 12).map((img) => (
+          <div class="w-[496px] h-[242px] rounded-2xl overflow-hidden">
+            <Image
+              src={img.src || "/placeholder.svg"}
+              alt={img.alt}
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        ))}
+      </div>
     </div>
 
-    <div class="grid grid-cols-4 gap-4 max-w-full mx-auto mt-4">
-      {images.slice(5, 9).map((img) => (
-        <div class="w-[368px] h-[242] rounded-2xl overflow-hidden">
-          <Image
-            src={img.src || "/placeholder.svg"}
-            alt={img.alt}
-            class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-          />
-        </div>
-      ))}
-    </div>
+    <!-- Mobile Grid -->
+    <div class="grid md:hidden grid-cols-2 gap-2 w-[367px] mx-auto">
+      <!-- First Row -->
+      <div class="flex flex-col gap-2">
+        {mobileImages.slice(0, 2).map((img) => (
+          <div class="w-[183.5px] h-[116px] rounded-2xl overflow-hidden">
+            <Image
+              src={img.src || "/placeholder.svg"}
+              alt={img.alt}
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        ))}
+      </div>
+      <div class="w-[183.5px] h-[240px] rounded-2xl overflow-hidden">
+        <Image
+          src={mobileImages[2].src || "/placeholder.svg"}
+          alt={mobileImages[2].alt}
+          class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+        />
+      </div>
 
-    <div class="grid grid-cols-3 gap-4 max-w-full mx-auto mt-4">
-      {images.slice(9, 12).map((img) => (
-        <div class="w-[496px] h-[242px] rounded-2xl overflow-hidden">
+      <!-- Second Row -->
+      {mobileImages.slice(3, 5).map((img) => (
+        <div class="w-[183.5px] h-[240px] rounded-2xl overflow-hidden">
           <Image
             src={img.src || "/placeholder.svg"}
             alt={img.alt}
@@ -78,6 +126,26 @@ const images = [
           />
         </div>
       ))}
+
+      <!-- Third Row -->
+      <div class="w-[183.5px] h-[240px] rounded-2xl overflow-hidden">
+        <Image
+          src={mobileImages[5].src || "/placeholder.svg"}
+          alt={mobileImages[5].alt}
+          class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+        />
+      </div>
+      <div class="flex flex-col gap-2">
+        {mobileImages.slice(6, 8).map((img) => (
+          <div class="w-[183.5px] h-[116px] rounded-2xl overflow-hidden">
+            <Image
+              src={img.src || "/placeholder.svg"}
+              alt={img.alt}
+              class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        ))}
+      </div>
     </div>
   </div>
 </section>
