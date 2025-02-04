@@ -1,28 +1,32 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 
 // Import images
-import img1 from '../../public/assets/baby-crawl.png';
-import img2 from '../../public/assets/baking.png';
-import img3 from '../../public/assets/mountain-view.png';
-import img4 from '../../public/assets/friends-party.png';
-import img5 from '../../public/assets/couple-moment.png';
+import img1 from "../../public/assets/baby-crawl.png";
+import img2 from "../../public/assets/baking.png";
+import img3 from "../../public/assets/mountain-view.png";
+import img4 from "../../public/assets/friends-party.png";
+import img5 from "../../public/assets/couple-moment.png";
 ---
 
 <section class="bg-white py-24 overflow-hidden">
   <div class="container mx-auto">
     <div class="text-center max-w-3xl mx-auto mb-20">
-      <h2 class="bg-gradient-to-r from-[#5C5C5C] via-[#3D3D3D] to-[#5C5C5C] bg-clip-text text-transparent md:text-[#31323D] text-5xl md:text-6xl font-bold mb-6">
+      <h2
+        class="bg-gradient-to-r from-[#5C5C5C] via-[#3D3D3D] to-[#5C5C5C] bg-clip-text text-transparent text-4xl md:text-[#31323D] md:text-6xl font-bold mb-6"
+      >
         Your memories are worth everything!
       </h2>
-      <p class=" text-[#3D3D3D] sm:font-medium md:text-[#31323D] text-xl">
+      <p class="text-[#3D3D3D] sm:font-medium md:text-[#31323D] text-xl">
         No one understands it better than us.
       </p>
     </div>
 
-    <div class="relative mx-0 h-[500px] w-full">
-      {/* Images with absolute positioning and hover effects */}
-      <div class="absolute left-0 transform hover:-rotate-12 transition-transform duration-300">
+    <!-- Desktop Layout (Unchanged) -->
+    <div class="relative hidden md:block mx-0 h-[500px] w-full">
+      <div
+        class="absolute left-0 transform hover:-rotate-12 transition-transform duration-300"
+      >
         <Image
           src={img1 || "/placeholder.svg"}
           alt="Baby crawling"
@@ -32,7 +36,9 @@ import img5 from '../../public/assets/couple-moment.png';
         />
       </div>
 
-      <div class="absolute left-[20%] transform rotate-6 hover:rotate-0 transition-transform duration-300 translate-y-12">
+      <div
+        class="absolute left-[20%] transform rotate-6 hover:rotate-0 transition-transform duration-300 translate-y-12"
+      >
         <Image
           src={img2 || "/placeholder.svg"}
           alt="Friends baking together"
@@ -42,7 +48,9 @@ import img5 from '../../public/assets/couple-moment.png';
         />
       </div>
 
-      <div class="absolute left-[40%] transform -rotate-6 hover:rotate-0 transition-transform duration-300 -translate-y-12">
+      <div
+        class="absolute left-[40%] transform -rotate-6 hover:rotate-0 transition-transform duration-300 -translate-y-12"
+      >
         <Image
           src={img3 || "/placeholder.svg"}
           alt="Person on mountain top"
@@ -52,7 +60,9 @@ import img5 from '../../public/assets/couple-moment.png';
         />
       </div>
 
-      <div class="absolute left-[60%] transform rotate-12 hover:rotate-0 transition-transform duration-300 translate-y-8">
+      <div
+        class="absolute left-[60%] transform rotate-12 hover:rotate-0 transition-transform duration-300 translate-y-8"
+      >
         <Image
           src={img4 || "/placeholder.svg"}
           alt="Friends enjoying party"
@@ -62,13 +72,75 @@ import img5 from '../../public/assets/couple-moment.png';
         />
       </div>
 
-      <div class="absolute right-0 transform  hover:-rotate-12 transition-transform duration-300 -translate-y-4">
+      <div
+        class="absolute right-0 transform hover:-rotate-12 transition-transform duration-300 -translate-y-4"
+      >
         <Image
           src={img5 || "/placeholder.svg"}
           alt="Couple moment"
           width={300}
           height={400}
           class="rounded-l-[2rem]"
+        />
+      </div>
+    </div>
+
+    <!-- Mobile Layout (Custom Arrangement) -->
+    <div class="relative flex md:hidden w-full h-[684px]">
+      <!-- Top Left Corner -->
+      <div class="absolute top-[50px] -left-3 w-[207px] h-[273px]">
+        <Image
+          src={img1 || "/placeholder.svg"}
+          alt="Baby crawling"
+          width={207}
+          height={273}
+          class="w-full h-full object-cover -rotate-3 rounded-l-[2rem]"
+        />
+      </div>
+
+      <!-- Top Right Corner -->
+      <div class="absolute top-0 -right-10 w-[207px] h-[273px]">
+        <Image
+          src={img2 || "/placeholder.svg"}
+          alt="Friends baking together"
+          width={207}
+          height={273}
+          class="w-full h-full object-cover rounded-bl-[20px]"
+        />
+      </div>
+
+      <!-- Bottom Right Corner -->
+      <div class="absolute bottom-0 -right-6 w-[207px] h-[273px]">
+        <Image
+          src={img5 || "/placeholder.svg"}
+          alt="Couple moment"
+          width={207}
+          height={273}
+          class="w-full h-full object-cover rotate-3 rounded-[20px]"
+        />
+      </div>
+
+      <!-- Center Image -->
+      <div
+        class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[207px] h-[273px]"
+      >
+        <Image
+          src={img3 || "/placeholder.svg"}
+          alt="Person on mountain top"
+          width={207}
+          height={273}
+          class="w-full h-full object-cover rotate-9 rounded-[20px]"
+        />
+      </div>
+
+      <!-- Bottom Left Corner -->
+      <div class="absolute bottom-0 -left-20 w-[207px] h-[273px]">
+        <Image
+          src={img4 || "/placeholder.svg"}
+          alt="Friends enjoying party"
+          width={207}
+          height={273}
+          class="w-full h-full object-cover rounded-r-[2opx]"
         />
       </div>
     </div>
