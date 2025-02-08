@@ -10,139 +10,228 @@ import img5 from "../../public/assets/couple-moment.png";
 ---
 
 <section class="bg-white py-24 overflow-hidden">
-  <div class="container mx-auto">
+  <div class="container mx-auto px-4">
+    <!-- Text Section -->
     <div class="text-center max-w-3xl mx-auto mb-20">
       <h2
         class="bg-gradient-to-r from-[#5C5C5C] via-[#3D3D3D] to-[#5C5C5C] bg-clip-text text-transparent text-4xl md:text-[#31323D] md:text-6xl font-bold mb-6"
       >
         Your memories are worth everything!
       </h2>
-      <p class="text-[#3D3D3D] sm:font-medium md:text-[#31323D] text-xl md:text-2xl">
+      <p
+        class="text-[#3D3D3D] sm:font-medium md:text-[#31323D] text-xl md:text-2xl"
+      >
         No one understands it better than us.
       </p>
     </div>
+  </div>
 
-    <!-- Desktop Layout (Unchanged) -->
-    <div class="relative hidden md:block mx-0 h-[500px] w-full">
+  <!-- Image Section -->
+  <div class="relative w-full">
+    <div class="relative h-[684px] sm:h-[600px] lg:h-[500px] ">
+      <!-- Images with responsive positioning -->
       <div
-        class="absolute left-0 transform hover:-rotate-12 transition-transform duration-300"
+        class="absolute transition-all duration-500 ease-in-out image-1 z-10"
       >
-        <Image
-          src={img1 || "/placeholder.svg"}
+        <img
+          src={img1.src || "/placeholder.svg"}
           alt="Baby crawling"
           width={300}
           height={400}
-          class="rounded-r-[2rem]"
+          class="w-[207px] h-[273px] sm:w-[250px] lg:w-[300px] lg:h-[476.46px] sm:h-auto object-cover rounded-r-[2rem] transition-all duration-300"
         />
       </div>
 
       <div
-        class="absolute left-[20%] transform rotate-6 hover:rotate-0 transition-transform duration-300 translate-y-12"
+        class="absolute transition-all duration-500 ease-in-out image-2 z-20"
       >
-        <Image
-          src={img2 || "/placeholder.svg"}
+        <img
+          src={img2.src || "/placeholder.svg"}
           alt="Friends baking together"
           width={300}
           height={400}
-          class="rounded-[2rem]"
+          class="w-[207px] h-[273px] sm:w-[250px] lg:w-[350px] lg:h-[476.46px] sm:h-auto object-cover rounded-[2rem] transition-all duration-300"
         />
       </div>
 
       <div
-        class="absolute left-[40%] transform -rotate-6 hover:rotate-0 transition-transform duration-300 -translate-y-12"
+        class="absolute transition-all duration-500 ease-in-out image-3 z-30"
       >
-        <Image
-          src={img3 || "/placeholder.svg"}
+        <img
+          src={img3.src || "/placeholder.svg"}
           alt="Person on mountain top"
           width={300}
           height={400}
-          class="rounded-[2rem]"
+          class="w-[207px] h-[273px] sm:w-[250px] lg:w-[380px] lg:h-[476.46px] sm:h-auto object-cover rounded-[2rem] transition-all duration-300"
         />
       </div>
 
       <div
-        class="absolute left-[60%] transform rotate-12 hover:rotate-0 transition-transform duration-300 translate-y-8"
+        class="absolute transition-all duration-500 ease-in-out image-4 z-40"
       >
-        <Image
-          src={img4 || "/placeholder.svg"}
+        <img
+          src={img4.src || "/placeholder.svg"}
           alt="Friends enjoying party"
           width={300}
           height={400}
-          class="rounded-[2rem]"
+          class="w-[207px] h-[273px] sm:w-[250px] lg:w-[360px] lg:h-[476.46px] sm:h-auto object-cover rounded-[2rem] transition-all duration-300"
         />
       </div>
 
       <div
-        class="absolute right-0 transform hover:-rotate-12 transition-transform duration-300 -translate-y-4"
+        class="absolute transition-all duration-500 ease-in-out  image-5 z-50"
       >
-        <Image
-          src={img5 || "/placeholder.svg"}
+        <img
+          src={img5.src || "/placeholder.svg"}
           alt="Couple moment"
           width={300}
           height={400}
-          class="rounded-l-[2rem]"
-        />
-      </div>
-    </div>
-
-    <!-- Mobile Layout (Custom Arrangement) -->
-    <div class="relative flex md:hidden w-full h-[684px]">
-      <!-- Top Left Corner -->
-      <div class="absolute top-[50px] -left-3 w-[207px] h-[273px]">
-        <Image
-          src={img1 || "/placeholder.svg"}
-          alt="Baby crawling"
-          width={207}
-          height={273}
-          class="w-full h-full object-cover -rotate-3 rounded-l-[2rem]"
-        />
-      </div>
-
-      <!-- Top Right Corner -->
-      <div class="absolute top-0 -right-10 w-[207px] h-[273px]">
-        <Image
-          src={img2 || "/placeholder.svg"}
-          alt="Friends baking together"
-          width={207}
-          height={273}
-          class="w-full h-full object-cover rounded-bl-[20px]"
-        />
-      </div>
-
-      <!-- Bottom Right Corner -->
-      <div class="absolute bottom-0 -right-6 w-[207px] h-[273px]">
-        <Image
-          src={img5 || "/placeholder.svg"}
-          alt="Couple moment"
-          width={207}
-          height={273}
-          class="w-full h-full object-cover rotate-3 rounded-[20px]"
-        />
-      </div>
-
-      <!-- Center Image -->
-      <div
-        class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[207px] h-[273px]"
-      >
-        <Image
-          src={img3 || "/placeholder.svg"}
-          alt="Person on mountain top"
-          width={207}
-          height={273}
-          class="w-full h-full object-cover rotate-9 rounded-[20px]"
-        />
-      </div>
-
-      <!-- Bottom Left Corner -->
-      <div class="absolute bottom-0 -left-20 w-[207px] h-[273px]">
-        <Image
-          src={img4 || "/placeholder.svg"}
-          alt="Friends enjoying party"
-          width={207}
-          height={273}
-          class="w-full h-full object-cover rounded-r-[2opx]"
+          class="w-[207px] h-[273px] sm:w-[250px] lg:w-[300px] lg:h-[476.46px] sm:h-auto object-cover rounded-l-[2rem] transition-all duration-300"
         />
       </div>
     </div>
   </div>
 </section>
+
+<style>
+  /* Styles for screens larger than 992px */
+  @media (min-width: 993px) {
+    .image-1 {
+      left: 0;
+      top: calc(50px + ((100vw - 320px) * 0.02));
+      transform: -rotate(4deg); /* No rotation for the left image */
+    }
+    .image-2 {
+      left: calc(15% + ((100vw - 320px) * 0.05));
+      top: 0;
+    }
+    .image-3 {
+      left: 50%;
+      top: 30%;
+      transform: translate(-50%, -50%);
+    }
+    .image-4 {
+      right: calc(15% + ((100vw - 320px) * 0.05));
+      bottom: 0;
+    }
+    .image-5 {
+      right: 0;
+      bottom: calc(0px + ((100vw - 320px) * 0.03));
+    }
+  }
+
+  /* Styles for screens between 768px and 992px */
+  @media (max-width: 992px) and (min-width: 769px) {
+    .image-1 {
+      left: 0;
+      top: calc(30px + ((100vw - 320px) * 0.02));
+      transform: -rotate(4deg); /* No rotation for the left image */
+    }
+    .image-2 {
+      left: calc(15% + ((100vw - 320px) * 0.05));
+      top: 0;
+    }
+    .image-3 {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .image-4 {
+      right: calc(15% + ((100vw - 320px) * 0.05));
+      bottom: 0;
+    }
+    .image-5 {
+      right: 0;
+      bottom: calc(0px + ((100vw - 320px) * 0.03));
+    }
+  }
+
+  /* Styles for screens between 564px and 768px */
+  @media (max-width: 768px) and (min-width: 565px) {
+    .image-1 {
+      left: 0;
+      top: calc(20px + ((100vw - 320px) * 0.02));
+      transform: -rotate(4deg); /* No rotation */
+    }
+    .image-2 {
+      left: calc(10% + ((100vw - 320px) * 0.05));
+      top: 0;
+    }
+    .image-3 {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .image-4 {
+      right: calc(10% + ((100vw - 320px) * 0.05));
+      bottom: 0;
+    }
+    .image-5 {
+      right: 0;
+      bottom: calc(0px + ((100vw - 320px) * 0.03));
+    }
+  }
+
+  /* Styles for screens smaller than 564px */
+  @media (max-width: 564px) {
+    .image-1 {
+      top: 50px;
+      left: 0;
+      transform: -rotate(4deg); /* Stick to left */
+    }
+    .image-2 {
+      top: 0;
+      right: 0; /* Stick to right */
+    }
+    .image-3 {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .image-4 {
+      bottom: 0;
+      left: 0;
+    }
+    .image-5 {
+      bottom: 0;
+      right: 0; /* Stick to right */
+    }
+  }
+</style>
+
+<script>
+  function updateImagePositions() {
+    const width = window.innerWidth;
+    const images = document.querySelectorAll(".memory-section .transition-all");
+
+    if (width <= 640) {
+      // Mobile rotations
+      const mobileRotations = [0, 0, 9, 0, 3];
+      images.forEach((img, index) => {
+        const transform =
+          index === 2
+            ? `translate(-50%, -50%) rotate(${mobileRotations[index]}deg)`
+            : `rotate(${mobileRotations[index]}deg)`;
+        (img as HTMLElement).style.transform = transform;
+      });
+    } else {
+      // Desktop rotations
+      images.forEach((img, index) => {
+        const rotation = [
+          6 + (width - 320) * 0.002,
+          9 + (width - 320) * -0.01,
+          3 + (width - 320) * 0.003,
+        ][index];
+
+        (img as HTMLElement).style.transform =
+          index === 2
+            ? `translate(-50%, -50%) rotate(${rotation}deg)`
+            : `rotate(${rotation}deg)`;
+      });
+    }
+  }
+
+  window.addEventListener("resize", updateImagePositions);
+  window.addEventListener("load", updateImagePositions);
+  updateImagePositions();
+</script>

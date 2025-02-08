@@ -4,17 +4,21 @@ import Button from './Button.astro';
 ---
 
 <section class="bg-white min-h-screen flex flex-col">
+  <!-- Header Component -->
   <Header />
-  <main class="flex-1 flex items-center justify-center text-center px-4">
-    <div>
-    <h1 class="bg-gradient-to-r from-[#5C5C2C] via-[#3D3D3D] to-[#5C5C5C] bg-clip-text text-transparent text-4xl md:text-6xl font-bold max-w-4xl mx-auto leading-tight">
-      Your photo gallery is a mess!<br/>
-      We can fix it.
-    </h1>
-    <p class="text-[#3D3D3D] text-xl mt-6 mb-10">
-      AirVault is the easiest way to capture and relive your memories.
-    </p>
-    <Button text="Try AirVault Now" href="#" />
+
+  <!-- Main Content -->
+  <main class="flex-1 flex items-center justify-center text-center px-6 sm:px-10 md:px-16 lg:px-24">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="bg-gradient-to-r from-[#5C5C2C] via-[#3D3D3D] to-[#5C5C5C] bg-clip-text text-transparent 
+                 text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold leading-tight">
+        Your photo gallery is a mess!<br/>
+        We can fix it.
+      </h1>
+      <p class="text-[#3D3D3D] font-medium text-lg sm:text-xl md:text-2xl mt-4 sm:mt-6 mb-6 sm:mb-10">
+        AirVault is the easiest way to capture and relive your memories.
+      </p>
+      <Button text="Try AirVault Now" href="#" />
     </div>
   </main>
 </section>
